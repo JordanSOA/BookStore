@@ -9,9 +9,12 @@ export class BooksService {
   livres = null;
 
   constructor(private http: HttpClient) {
-    http.get('https://www.googleapis.com/books/v1/volumes?q=me').subscribe((data) => {
+    http.get('https://www.googleapis.com/books/v1/volumes?q=Alice').subscribe((data) => {
       console.log(data);
-      this.livres = data[0][2];
+      this.livres = data.items;
+      console.log(this.livres[0].volumeInfo.authors);
+      console.log(this.livres[0].volumeInfo.title);
+      console.log(this.livres[0].volumeInfo.publishedDate);
     });
   }
   // getBooks() {
