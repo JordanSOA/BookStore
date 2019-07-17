@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BooksListComponent } from './books-list/books-list.component';
 import { BooksService } from './books.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchbComponent } from './searchb/searchb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksListComponent
+    BooksListComponent,
+    SearchbComponent
   ],
   imports: [
     BrowserModule,
