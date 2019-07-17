@@ -1,7 +1,7 @@
 <p>books-list works!</p>
 <h2>Books List</h2>
 <ul *ngFor= "let book of books">
-    <li> Title: {{ book }} | Price: {{ book }}</li>
+    <li> Title: {{ book.volumeInfo.title }} | Authors: {{ book.volumeInfo.authors }}</li>
 </ul>
 
 

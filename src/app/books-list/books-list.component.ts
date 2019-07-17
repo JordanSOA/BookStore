@@ -10,26 +10,18 @@ export class BooksListComponent implements OnInit {
   public books = [];
 
   ngOnInit() {
-  console.log(this.booksService.getBooks());
-  this.books.push(this.booksService.getBooks());
-  console.log(this.books);
+    this.booksService.getBooks().subscribe((data) => {
+      console.log(data.items);
+      this.books = data.items;
+      for (let [key, value] of Object.entries(this.books)) {
+        console.log(`${key}: ${value}`);
+      }
+    });
+    console.log(this.books);
   }
   constructor(private booksService: BooksService ) {
-    // this.books = this.booksService.getBooks();
-    // console.log(this.books);
-    // this.fillBooks();
-   // this.books = this.booksService.getBooks();
   }
 
-  // fillBooks() {
-  //   let i = 0;
-  //   for ( i  of this.booksService.getBooks()) {
-  //     console.log('ok');
-  //     while (i < this.books.length) {
-  //       this.books = this.booksService.livres[i].volumeInfo.title;
-  //       console.log('ok');
-  //     }
-  //   }
   }
 
 
