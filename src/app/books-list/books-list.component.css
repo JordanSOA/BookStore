@@ -1,0 +1,40 @@
+mat-card {
+    border: 1px solid black;
+    width: 90%;
+}
+mat-card-header {
+    background-color: blueviolet;
+    border: 1px solid black;
+}
+mat-card-title {
+    text-decoration: underline;
+}
+mat-card-actions {
+    border: 1px solid black;
+}
+
+p {
+    border: 1px solid black;
+    overflow-y: scroll;
+    height: 10vh; 
+}
+img {
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: min-content;
+}
+
+.authNames {
+    color: red;
+}
+
+.price {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    font-size: x-large;
+}
