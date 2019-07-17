@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
 
+
 @Component({
   selector: 'app-books-list',
   templateUrl: './books-list.component.html',
@@ -9,20 +10,21 @@ import { BooksService } from '../books.service';
 export class BooksListComponent implements OnInit {
   public books = [];
 
-  // constructor(private booksService: BooksService ) {
-  //   this.books = this.booksService.getBooks();
-  // }
+  ngOnInit() {
+  }
+  constructor(private booksService: BooksService ) {
+  }
 
-  constructor(private booksService: BooksService) {
-    this.booksService.searchB('flower').subscribe((data) => {
-      console.log(data);
-
-    }, (error) => {
-      console.log(error);
+  search() {
+    this.booksService.getBooks().subscribe((data) => {
+      console.log(data.items);
+      this.books = data.items;
+      // for (let [key, value] of Object.entries(this.books)) {
+      //   console.log(`${key}: ${value}`);
+      // }
     });
   }
 
-  ngOnInit() {
   }
 
-}
+
