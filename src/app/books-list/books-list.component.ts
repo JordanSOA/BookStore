@@ -9,6 +9,7 @@ import { BooksService } from '../books.service';
 })
 export class BooksListComponent implements OnInit {
   public books = [];
+  public bookD = [];
 
   ngOnInit() {
   }
@@ -25,6 +26,17 @@ export class BooksListComponent implements OnInit {
     });
   }
 
+  // IN WORKS...............
+
+  // searchIsbn() {
+  //   this.booksService.getBookByIsbn().subscribe((data) => {
+  //     this.bookD = data.items[0].volumeInfo;
+  //     const bookSale = this.bookD;
+  //     // console.log(this.bookD[0].volumeInfo.title);
+  //     console.log(this.bookD);
+  //     console.log(bookSale);
+  //   });
+  // }
   }
 
 

@@ -3,9 +3,10 @@
 <h2>Books List</h2>
 <input [(ngModel)]="booksService.query" (keydown.enter)="search()" />
 <button (click)="search()">Envoyer</button>
+
 <div *ngIf=" search !== null">
     <ul *ngFor="let book of books">
-        <mat-card class="card red darken-2">
+        <mat-card class="card ">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>
@@ -30,10 +31,8 @@
         </mat-card>
     </ul>
 </div>
-<div class="preloader-wrapper active">
-    <div class="spinner-layer spinner-red-only">
-        <div class="circle-clipper left">
-            <div class="circle"></div>
-        </div>
-    </div>
-</div>
+<!-- <div>
+        <input [(ngModel)]="booksService.isbn" (keydown.enter)="searchIsbn()" />
+        <button (click)="searchIsbn()">ISBN</button>
+        <h3> {{ bookD.title }}, {{bookD.authors}} </h3>
+</div> -->

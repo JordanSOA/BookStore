@@ -8,12 +8,14 @@ import { BooksListComponent } from './books-list/books-list.component';
 import { BooksService } from './books.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import { BookdetailComponent } from './bookdetail/bookdetail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksListComponent
+    BooksListComponent,
+    BookdetailComponent
   ],
   imports: [
     BrowserModule,
