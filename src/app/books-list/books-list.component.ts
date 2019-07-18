@@ -19,9 +19,6 @@ export class BooksListComponent implements OnInit {
     this.booksService.getBooks().subscribe((data) => {
       console.log(data.items);
       this.books = data.items;
-      // for (let [key, value] of Object.entries(this.books)) {
-      //   console.log(`${key}: ${value}`);
-      // }
     });
   }
 }

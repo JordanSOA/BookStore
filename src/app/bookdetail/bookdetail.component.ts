@@ -9,16 +9,13 @@ import { BooksService } from '../books.service';
 export class BookdetailComponent implements OnInit {
   public bookD: object;
 
-  constructor(private booksService: BooksService ) {
-  }
-
   ngOnInit() {
   }
+  constructor(private booksService: BooksService ) {}
   searchIsbn() {
     this.booksService.getBookByIsbn().subscribe((data) => {
-      this.bookD =  data.items[0].volumeInfo;
+      this.bookD =  data.items[0];
       console.log(this.bookD);
-      //console.log(bookSale);
     });
   }
 
