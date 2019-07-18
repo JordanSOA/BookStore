@@ -2,5 +2,5 @@
 <div>
     <input [(ngModel)]="booksService.isbn" (keydown.enter)="searchIsbn()" />
     <button (click)="searchIsbn()">ISBN</button>
-    <h3> {{ bookD.title }}, {{bookD }} </h3>
+    <h3> {{ bookD.title }}, {{bookD.pageCount }} </h3>
 </div>
