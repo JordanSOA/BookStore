@@ -1,1 +1,6 @@
 <p>bookdetail works!</p>
+<div>
+    <input [(ngModel)]="booksService.isbn" (keydown.enter)="searchIsbn()" />
+    <button (click)="searchIsbn()">ISBN</button>
+    <h3> {{ bookD.title }}, {{bookD }} </h3>
+</div>

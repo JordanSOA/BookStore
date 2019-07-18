@@ -17,7 +17,7 @@
                     <div class="price">Price: {{book.saleInfo?.listPrice?.amount}}</div>
                 </mat-card-subtitle>
             </mat-card-header>
-            <img [src]="book.volumeInfo.imageLinks?.thumbnail" />
+            <img mat-card-md-image [src]="book.volumeInfo.imageLinks?.thumbnail">
             <mat-card-content>
                 <p>
                     {{book.volumeInfo.description}}
@@ -31,8 +31,4 @@
         </mat-card>
     </ul>
 </div>
-<!-- <div>
-        <input [(ngModel)]="booksService.isbn" (keydown.enter)="searchIsbn()" />
-        <button (click)="searchIsbn()">ISBN</button>
-        <h3> {{ bookD.title }}, {{bookD.authors}} </h3>
-</div> -->
+
