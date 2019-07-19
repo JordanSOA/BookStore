@@ -1,7 +1,7 @@
+
+
 <p>bookdetail works!</p>
 <div>
-    <input [(ngModel)]="booksService.isbn" (keydown.enter)="searchIsbn()" />
-    <button (click)="searchIsbn()">ISBN</button>
     <div *ngIf=" bookD !== undefined ; else nobook">
         <ul>
             <li>Titre : {{ bookD.volumeInfo.title }}</li>
@@ -9,13 +9,14 @@
             <li>Genre : {{bookD.volumeInfo.categories}}</li>
             <li>Editeur : {{bookD.volumeInfo.publisher}}</li>
             <li>Description : {{bookD.volumeInfo.description}}</li>
-            <li>ISBN13: {{bookD.volumeInfo.industryIdentifiers[0].identifier}} | ISBN10 : {{bookD.volumeInfo.industryIdentifiers[1].identifier}} </li>
+            <li>ISBN13: {{bookD.volumeInfo.industryIdentifiers[1].identifier}} | ISBN10 : {{bookD.volumeInfo.industryIdentifiers[0].identifier}} </li>
             <li>Nbre de Page : {{bookD.volumeInfo.pageCount}}</li>
             <li>Langue : {{bookD.volumeInfo.language}}</li>
-            <li>Format : {{bookD.saleInfo.isEbook}}</li>
-            <li>Photo Couv : {{bookD.volumeInfo.imageLinks.thumbnail}}</li>
-            <li>RATING</li>
-            <li>Prix : {{bookD.saleInfo.listPrice.amount}} {{bookD.saleInfo.listPrice.currencyCode}} </li>
+            <li>Ebook : {{bookD.saleInfo.isEbook ?  'Oui' : 'Non'}}</li>
+            <li>Photo Couv <img [src]="bookD.volumeInfo.imageLinks?.thumbnail"></li>
+            <!-- <li><ngb-rating [rate]="bookD.volumeInfo.averageRating" [readonly]="readonly"></ngb-rating></li> -->
+            <li>RATING : {{bookD.volumeInfo.averageRating || "Not Here"}}</li>
+            <li>Prix : {{bookD.saleInfo.listPrice?.amount || 'NOt for sale' }} {{bookD.saleInfo.listPrice?.currencyCode}} </li>
         </ul>
     </div>
     <ng-template #nobook>NO BOOK FOR YOU</ng-template>

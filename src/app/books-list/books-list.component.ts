@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,10 +10,11 @@ import { BooksService } from '../books.service';
 })
 export class BooksListComponent implements OnInit {
   public books = [];
+  public bookD: object;
 
   ngOnInit() {
   }
-  constructor(private booksService: BooksService ) {
+  constructor(private booksService: BooksService, private route: ActivatedRoute ) {
   }
 
   search() {
@@ -21,6 +23,10 @@ export class BooksListComponent implements OnInit {
       this.books = data.items;
     });
   }
+  searchIsbn(isbn) {
+    this.booksService.getBookByIsbn(isbn).subscribe((data) => {
+      this.bookD =  data.items[0];
+      console.log(this.bookD);
+    });
+  }
 }
-
-

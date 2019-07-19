@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,14 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksListComponent,
-    BookdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     HttpClientModule,
     FormsModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    NgbModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]

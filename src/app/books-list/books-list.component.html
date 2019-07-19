@@ -1,8 +1,18 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 <p>books-list works!</p>
 <h2>Books List</h2>
+
+
 <input [(ngModel)]="booksService.query" (keydown.enter)="search()" />
 <button (click)="search()">Envoyer</button>
+<input [(ngModel)]="booksService.isbn" (keydown.enter)="searchIsbn()" />
+<button [routerLink]="['/booksList/bookDetail', booksService.isbn]">ISBN</button>
+<div>
+    {{bookD?.volumeInfo.title}}
+    <a routerLink='/booksList/bookdetail'>Details</a>
+</div>
+
 
 <div *ngIf=" search !== null">
     <ul *ngFor="let book of books">
@@ -17,7 +27,7 @@
                     <div class="price">Price: {{book.saleInfo?.listPrice?.amount}}</div>
                 </mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-md-image [src]="book.volumeInfo.imageLinks?.thumbnail">
+            <img mat-card-lg-image [src]="book.volumeInfo.imageLinks?.thumbnail">
             <mat-card-content>
                 <p>
                     {{book.volumeInfo.description}}
@@ -31,4 +41,3 @@
         </mat-card>
     </ul>
 </div>
-
