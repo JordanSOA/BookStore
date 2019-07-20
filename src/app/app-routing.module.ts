@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes: Routes = [
@@ -26,7 +27,9 @@ const routes: Routes = [
     FormsModule,
     MatCardModule,
     MatTabsModule,
-    RouterModule.forRoot(routes, {enableTracing: false})],
+    RouterModule.forRoot(routes, {enableTracing: false}),
+    NgbModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,6 +1,8 @@
 
 
 <p>bookdetail works!</p>
+<input [(ngModel)]="booksService.isbn" (keydown.enter)="getBookByIsbn()" />
+<button (click)="getBookByIsbn()">ISBN</button>
 <div>
     <div *ngIf=" bookD !== undefined ; else nobook">
         <ul>

@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -26,8 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     MatCardModule,
-    MatTabsModule,
-    NgbModule
+    MatTabsModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]
