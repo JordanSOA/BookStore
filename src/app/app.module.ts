@@ -11,6 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import {MatTabsModule} from '@angular/material/tabs';
 
+import { CookieService } from 'ngx-cookie-service';
+
 
 
 
@@ -28,7 +30,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatCardModule,
     MatTabsModule
   ],
-  providers: [BooksService],
+  providers: [BooksService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

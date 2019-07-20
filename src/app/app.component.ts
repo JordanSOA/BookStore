@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'BookApp';
+  cookieV = 'UNKNOWN';
+
+  constructor(private cookieService: CookieService) {}
+
+  ngOnInit(): void {
+    this.cookieService.set('Test', 'Hello World');
+    this.cookieV = this.cookieService.get('Hello World');
+    const allCookies = this.cookieService.get(name);
+    console.log(this.cookieV);
+    console.log(allCookies + ' all');
+  }
 }
