@@ -8,15 +8,9 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent implements OnInit {
   title = 'BookApp';
-  cookieV = 'UNKNOWN';
 
-  constructor(private cookieService: CookieService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.cookieService.set('Test', 'Hello World');
-    this.cookieV = this.cookieService.get('Hello World');
-    const allCookies = this.cookieService.get(name);
-    console.log(this.cookieV);
-    console.log(allCookies + ' all');
+  ngOnInit() {
   }
 }
