@@ -7,15 +7,14 @@
 <input [(ngModel)]="booksService.query" (keydown.enter)="search()" />
 <button (click)="search()">Envoyer</button>
 <!-- <input [(ngModel)]="booksService.isbn" (keydown.enter)="searchIsbn()" />
-<button [routerLink]="['/booksList/bookDetail', booksService.isbn]">ISBN</button> -->
+<button [routerLink]="['/booksList/bookDetail', booksService.isbn]">ISBN</button> --> 
 <!-- <div>
     <ul>
-        <li>{{bookD?.volumeInfo.title}}</li>
-        <li> {{bookD?.volumeInfo.averageRating || "Not Here"}}</li>
+        <li>{{book.Items.volumeInfo.title}}</li>
+        <li> {{book.volumeInfo.averageRating || "Not Here"}}</li>
 </ul>
     <a routerLink='/booksList/bookdetail'>Details</a>
 </div> -->
-
 
 <div *ngIf=" search !== null">
     <ul *ngFor="let book of books">
@@ -32,10 +31,8 @@
             </mat-card-header>
             <img mat-card-lg-image [src]="book.volumeInfo.imageLinks?.thumbnail">
             <mat-card-content>
-                <ngb-rating [rate]="book.volumeInfo?.averageRating" max="5"></ngb-rating>
-                <!-- <p>
-                    {{book.volumeInfo.description}}
-                </p> -->
+                <ngb-rating [rate]="book.volumeInfo?.averageRating" max="5" ></ngb-rating>
+                <p>{{ book.volumeInfo.description}}</p>
             </mat-card-content>
             <mat-card-actions>
                 <button mat-button><i class="material-icons">thumb_up_alt</i></button>
