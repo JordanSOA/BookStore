@@ -20,21 +20,20 @@ export class BooksListComponent implements OnInit {
   constructor(private booksService: BooksService, private route: ActivatedRoute) {
   }
 
+  addToCart() {
+    console.log(this.books[0].volumeInfo.title);
+    const cartCookie = this.booksService.createCartCookie();
+    console.log(cartCookie);
+  }
+
   search() {
     this.booksService.getBooks().subscribe((data) => {
-      console.log(data.items);
       this.books = data.items;
-      // this.cookieService.set('id', 'value', undefined, '/');
-      // this.cookieV =  this.cookieService.getAll();
-      // // const allCookies = this.cookieService.get(this.cookieV);
-      // console.log(this.cookieV);
-      // // console.log(allCookies + ' all');
     });
   }
   searchIsbn(isbn) {
     this.booksService.getBookByIsbn(isbn).subscribe((data) => {
       this.bookD = data.items[0];
-      console.log(this.bookD);
     });
   }
 }
