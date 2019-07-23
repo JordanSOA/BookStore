@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 const routes: Routes = [
@@ -28,7 +30,8 @@ const routes: Routes = [
     MatCardModule,
     MatTabsModule,
     RouterModule.forRoot(routes, {enableTracing: false}),
-    NgbModule
+    NgbModule,
+    MatInputModule
   ],
   exports: [RouterModule]
 })

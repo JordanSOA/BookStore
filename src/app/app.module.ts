@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import {MatTabsModule} from '@angular/material/tabs';
-
 import { CookieService } from 'ngx-cookie-service';
 
 

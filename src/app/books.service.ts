@@ -16,14 +16,10 @@ export class BooksService {
   constructor(private http: HttpClient, private cookieService: CookieService) {
   }
   getBooks(): Observable<any> {
-    // console.log(this.query);
     this.createCookie();
-    // this.addToCart();
-    // console.log('https://www.googleapis.com/books/v1/volumes?q=' + this.query + '&maxResults=40');
     return (this.http.get('https://www.googleapis.com/books/v1/volumes?q=' + this.query + '&maxResults=40'));
   }
   getBookByIsbn(isbn): Observable<any> {
-    // console.log('https://www.googleapis.com/books/v1/volumes?q=+' + this.isbn);
     return (this.http.get('https://www.googleapis.com/books/v1/volumes?q=+isbn+' + this.isbn + ' '));
   }
 
